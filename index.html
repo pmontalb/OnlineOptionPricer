@@ -73,7 +73,7 @@
 
 						<div class="model-input-wrapper">
 							Spot Price:
-							<input id="slider-spot-value" class="model-input-number" type="text" min="0" max="50000" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-spot-value" class="model-input-number" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-spot" class="slider"></div>
 						</div>
 
@@ -81,7 +81,7 @@
 
 						<div class="model-input-wrapper">
 							Strike Price:
-							<input id="slider-strike-value" class="model-input-number" type="text" min="0" max="50000" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-strike-value" class="model-input-number" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-strike" class="slider"></div>
 						</div>
 
@@ -89,7 +89,7 @@
 
 						<div class="model-input-wrapper">
 							<span rel="tooltip" title="Risk-free discounting rate"> Risk-Free Interest Rate (%):</span>
-							<input id="slider-interest-rate-value" class="model-input-number" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-interest-rate-value" class="model-input-number" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-interest-rate" class="slider"></div>
 						</div>
 
@@ -97,7 +97,7 @@
 
 						<div class="model-input-wrapper">
 							<span rel="tooltip" title="Cost of carrying the option's underlying. If there's no borrow rate, use the same value as the risk-free interest rate"> Carry Rate (%):</span>
-							<input id="slider-carry-rate-value" class="model-input-number" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-carry-rate-value" class="model-input-number" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-carry-rate" class="slider"></div>
 						</div>
 
@@ -105,7 +105,7 @@
 
 						<div class="model-input-wrapper">
 							Volatility (%):
-							<input id="slider-volatility-value" class="model-input-number" type="text" min="0.0001" max="500" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-volatility-value" class="model-input-number" type="text" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-volatility" class="slider"></div>
 						</div>
 
@@ -113,7 +113,7 @@
 
 						<div class="model-input-wrapper">
 							Days To Expiry:
-							<input id="slider-expiry-value" class="model-input-number" type="text" min="0.0001" max="10000" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-expiry-value" class="model-input-number" type="text" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-expiry" class="slider"></div>
 							<div class="radio">
 								<label>
@@ -228,7 +228,7 @@
 	<script src="js/blackScholes.js" type="text/javascript"></script>
 
 	<!-- Sets the callback to each input for updating the model -->
-	<script src="js/callbackSetup.js" type="text/javascript"></script>
+	<script src="js/calculationCallbackSetup.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		$().ready(function() {

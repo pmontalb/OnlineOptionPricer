@@ -1,6 +1,9 @@
 "use strict"
 
 function __sliderSetup(jSlider, jLabel, min, max, val) {
+    if (!jSlider.length || !jLabel.length)
+        return;
+
     jSlider.noUiSlider({
         start: val,
         connect: "lower",

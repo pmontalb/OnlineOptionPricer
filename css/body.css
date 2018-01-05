@@ -86,6 +86,10 @@ label, input {
   clear: both;
 }
 
+.small {
+  width: 60px;
+}
+
 .model-input-wrapper {
   border: black 1px solid;
   border-radius: 5px;

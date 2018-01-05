@@ -42,7 +42,7 @@
 
 			<div class="collapse navbar-collapse" id="navigation-index">
 				<ul class="nav navbar-nav navbar-right">
-                    <li> <a href="index.html"> Calculations </a> </li>
+					<li> <a href="index.html"> Calculations </a> </li>
 					<li> <a href="plots.html"> Plots and Formulae </a> </li>
 					<li> <a href="https://github.com/pmontalb" target="_blank" class="btn btn-white btn-simple btn-just-icon"> <i class="fa fa-github"></i> </a> </li>
 					<li> <a href="https://www.linkedin.com/in/francesco-paolo-montalbano" target="_blank" class="btn btn-white btn-simple btn-just-icon"> <i class="fa fa-linkedin"></i></a></li>
@@ -68,52 +68,66 @@
 		<div class="main main-raised">
 			<div class="section section-basic">
 				<div class="container">
-					<div class="col-sm-4">
+					<div class="col-sm-3">
 						<h3>Input</h3>
 
+						<p></p>
+
 						<div class="model-input-wrapper">
-							Spot Price:
-							<input id="slider-spot-value" class="model-input-number" type="text" min="0" max="50000" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<b>Strike (\(K\)) Price Parameters</b>: 
+							<p>
+								Min Strike:
+								<input id="min-strike-value" class="model-input-number small" type="text" value="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							</p>
+
+							<p>
+								Max Strike:
+								<input id="max-strike-value" class="model-input-number small" type="text" value="500" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							</p>
+
+							<p>
+								Number of strikes:
+								<input id="n-strikes-value" class="model-input-number small" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)/g, '$1');">
+							</p>
+						</div>
+
+						<p></p>
+
+						<div class="model-input-wrapper">
+							Spot Price (\(S\)):
+							<input id="slider-spot-value" class="model-input-number  small" type="text" min="0" max="50000" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-spot" class="slider"></div>
 						</div>
 
 						<p></p>
 
 						<div class="model-input-wrapper">
-							Strike Price:
-							<input id="slider-strike-value" class="model-input-number" type="text" min="0" max="50000" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-							<div id="slider-strike" class="slider"></div>
-						</div>
-
-						<p></p>
-
-						<div class="model-input-wrapper">
-							<span rel="tooltip" title="Risk-free discounting rate"> Risk-Free Interest Rate (%):</span>
-							<input id="slider-interest-rate-value" class="model-input-number" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<span rel="tooltip" title="Risk-free discounting rate"> Risk-Free Rate (\(r\))(%):</span>
+							<input id="slider-interest-rate-value" class="model-input-number  small" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-interest-rate" class="slider"></div>
 						</div>
 
 						<p></p>
 
 						<div class="model-input-wrapper">
-							<span rel="tooltip" title="Cost of carrying the option's underlying. If there's no borrow rate, use the same value as the risk-free interest rate"> Carry Rate (%):</span>
-							<input id="slider-carry-rate-value" class="model-input-number" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<span rel="tooltip" title="Cost of carrying the option's underlying. If there's no borrow rate, use the same value as the risk-free interest rate"> Carry Rate (\(b\))(%):</span>
+							<input id="slider-carry-rate-value" class="model-input-number  small" type="text" min="-100" max="100" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-carry-rate" class="slider"></div>
 						</div>
 
 						<p></p>
 
 						<div class="model-input-wrapper">
-							Volatility (%):
-							<input id="slider-volatility-value" class="model-input-number" type="text" min="0.0001" max="500" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							Volatility (\(\sigma\))(%):
+							<input id="slider-volatility-value" class="model-input-number  small" type="text" min="0.0001" max="500" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-volatility" class="slider"></div>
 						</div>
 
 						<p></p>
 
 						<div class="model-input-wrapper">
-							Days To Expiry:
-							<input id="slider-expiry-value" class="model-input-number" type="text" min="0.0001" max="10000" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							Days To Expiry (\(T\)):
+							<input id="slider-expiry-value" class="model-input-number small" type="text" min="0.0001" max="10000" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-expiry" class="slider"></div>
 							<div class="radio">
 								<label>
@@ -131,9 +145,74 @@
 
 					</div>
 
-					<div class="col-sm-8">
+					<div class="col-sm-5">
 						<h3>Output</h3>
+
+						<div>
+							<table class="model-output-wrapper">
+								<tr>
+									<th> Analytic </th>
+									<th> Formula </th>
+								</tr>
+								<tr>
+									<td> Price </td>
+									<td> 
+										$$P_C = e^{-rT} \left(S e^{bT} \cdot N(d_1) - K \cdot N(d_2)\right)$$ 
+										$$P_P = e^{-rT} \left(K \cdot N(-d_2) - S e^{bT} \cdot N(-d_1)\right)$$ 
+									</td>
+								</tr>
+
+								<tr>
+									<td> Delta </td>
+									<td> 
+										$$\Delta_C = e^{(b - r)T} \cdot N(d_1)$$ 
+										$$\Delta_P = e^{(b - r)T} \cdot N(-d_1)$$ 
+									</td>
+								</tr>
+
+								<tr>
+									<td> Gamma </td>
+									<td> 
+										$$\Gamma_C = \Gamma_P = {e^{(b - r)T} \over S\sigma\sqrt{T} } \cdot P(d_1)$$ 
+									</td>
+								</tr>
+
+								<tr>
+									<td> Vega </td>
+									<td> 
+										$$V_C = V_P = e^{(b - r)T} S\sqrt{T} \cdot P(d_1)$$ 
+									</td>
+								</tr>
+
+								<tr>
+									<td> Rho </td>
+									<td> 
+										$$\rho_{C, P} = {\partial P_{C, P}\over \partial r} + {\partial P_{C, P}\over \partial b}$$
+										$$ {\partial P_{C, P}\over \partial r} = -T \cdot P_{C, P} $$ 
+									</td>
+								</tr>
+
+								<tr>
+									<td> Carry Rho </td>
+									<td> 
+										$$\rho^C_{C, P} = {\partial P_{C, P}\over \partial b}$$
+										$$ {\partial P_{C, P}\over \partial b} = S\cdot T \cdot \Delta_{C, P} $$ 
+									</td>
+								</tr>
+
+							</table>
+						</div>
 					</div>
+
+					<div class="col-sm-4">
+						<h3>Plots</h3>
+
+						<div class="model-output-wrapper">
+
+						</div>
+						
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -145,6 +224,9 @@
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/material.min.js"></script>
+
+	<!-- Plugin for displaying formulae -->
+	<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script> -->
 
 	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 	<script src="js/nouislider.min.js" type="text/javascript"></script>
@@ -163,7 +245,7 @@
 	<script src="js/blackScholes.js" type="text/javascript"></script>
 
 	<!-- Sets the callback to each input for updating the model -->
-	<script src="js/callbackSetup.js" type="text/javascript"></script>
+	<script src="js/plotCallbackSetup.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		$().ready(function() {
