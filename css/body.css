@@ -1,0 +1,129 @@
+body {
+  background-color: rgb(17, 17, 17);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* .index-page .wrapper>.header {
+  height: 50vh;
+}
+
+.index-page .brand {
+  margin-top: 20vh;
+} */
+
+.index-page .header-filter:after {
+  background: rgba(45, 25, 160, 0.64);
+  background: linear-gradient(45deg, rgba(45, 25, 160, 0.88) 0%, rgba(45, 25, 160, 0.45) 100%);
+  background: -moz-linear-gradient(135deg, rgba(45, 25, 160, 0.88) 0%, rgba(45, 25, 160, 0.45) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(45, 25, 160, 0.88) 0%, rgba(45, 25, 160, 0.45) 100%);
+}
+
+a, a:hover, a:focus {
+  color: rgb(45, 25, 160);
+}
+
+.label.label-primary {
+  background-color: rgb(45, 25, 160);
+}
+
+.form-control, .form-group .form-control {
+  background-image: linear-gradient(rgb(45, 25, 160), rgb(45, 25, 160)), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused .form-control {
+  background-image: linear-gradient(rgb(45, 25, 160), rgb(45, 25, 160)), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused .form-control .material-input:after {
+  background-color: rgb(45, 25, 160);
+}
+
+.form-group.is-focused label, .form-group.is-focused label.control-label {
+  color: rgb(45, 25, 160);
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: rgb(45, 25, 160);
+  border-color: rgb(45, 25, 160);
+}
+
+.progress .progress-bar, .progress .progress-bar.progress-bar-default {
+  background-color: rgb(45, 25, 160);
+}
+
+.progress .progress-bar.progress-bar-primary {
+  background-color: rgb(45, 25, 160);
+}
+
+.text-primary {
+  color: rgb(45, 25, 160);
+}
+
+.panel.panel-primary>.panel-heading {
+  background-color: rgb(45, 25, 160);
+}
+
+.label.label-primary {
+  background-color: rgb(45, 25, 160);
+}
+
+.icon.icon-primary {
+  color: rgb(45, 25, 160);
+}
+
+.no-bullet-list {
+  list-style-type: none;
+}
+
+label, input {
+  display: block;
+  /* 1. oh noes, my inputs are styled as block... */
+}
+
+.model-input-number {
+  width: 120px;
+  float: right;
+  clear: both;
+}
+
+.model-input-wrapper {
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 3px 3px 3px 3px
+}
+
+.model-output-wrapper {
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 3px 3px 3px 3px
+}
+
+th, tr, td {
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+table.fixed {
+  table-layout: fixed;
+  width: 30em;
+}
+
+table.fixed td {
+  overflow: hidden;
+}
+
+table.fixed td:nth-of-type(1) {
+  width: 10em;
+}
+table.fixed td:nth-of-type(2) {
+  width: 10em;
+}
+table.fixed td:nth-of-type(3) {
+  width: 10em;
+}
+
+output {
+  display: inline!important;
+}

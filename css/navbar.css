@@ -1,0 +1,39 @@
+.navbar {
+    padding: 0px 10px;
+  }
+  .navbar .navbar-header{
+    padding: 1em;
+  }
+  .navbar .navbar-nav > li > a {
+    font-size: 12px;
+  }
+  .navbar .navbar-nav > li > a .material-icons,
+  .navbar .navbar-nav > li > a .fa {
+    font-size: 20px;
+    max-width: 20px;
+  }
+  .navbar, .navbar.navbar-default {
+    background-color: rgb(30, 15, 116);
+  }
+  .navbar .dropdown-menu li > a:hover, .navbar .dropdown-menu li > a:focus, .navbar.navbar-default .dropdown-menu li > a:hover, .navbar.navbar-default .dropdown-menu li > a:focus {
+    background-color: rgb(45, 25, 160);
+  }
+  .navbar .dropdown-menu .active > a, .navbar.navbar-default .dropdown-menu .active > a {
+    background-color: rgb(45, 25, 160);
+  }
+  .navbar.navbar-primary {
+    background-color: rgb(45, 25, 160);
+  }
+  .navbar.navbar-primary .dropdown-menu li > a:hover, .navbar.navbar-primary .dropdown-menu li > a:focus {
+    background-color: rgb(45, 25, 160);
+  }
+  .navbar.navbar-primary .dropdown-menu .active > a {
+    background-color: rgb(45, 25, 160);
+  }
+
+  .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: rgb(45, 25, 160);
+  }
+  .nav-tabs {
+    background: rgb(45, 25, 160);
+  }

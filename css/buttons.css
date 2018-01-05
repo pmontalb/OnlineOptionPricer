@@ -1,0 +1,67 @@
+.btn.btn-primary, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary:active:focus, .btn.btn-primary:active:hover, .btn.btn-primary.active:focus, .btn.btn-primary.active:hover, .open > .btn.btn-primary.dropdown-toggle, .open > .btn.btn-primary.dropdown-toggle:focus, .open > .btn.btn-primary.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-primary,
+.navbar .navbar-nav > li > a.btn.btn-primary:hover,
+.navbar .navbar-nav > li > a.btn.btn-primary:focus,
+.navbar .navbar-nav > li > a.btn.btn-primary:active,
+.navbar .navbar-nav > li > a.btn.btn-primary.active,
+.navbar .navbar-nav > li > a.btn.btn-primary:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-primary:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-primary.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-primary.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:hover {
+  background-color: rgb(45, 25, 160);
+  color: #FFFFFF;
+}
+
+.btn.btn-primary.btn-simple,
+.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple {
+  background-color: transparent;
+  color: rgb(45, 25, 160);
+  box-shadow: none;
+}
+
+.btn.btn-primary.btn-simple:hover, .btn.btn-primary.btn-simple:focus, .btn.btn-primary.btn-simple:active,
+.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:hover,
+.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:focus,
+.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:active {
+  background-color: transparent;
+  color: rgb(45, 25, 160);
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check {
+    background: rgb(45, 25, 160);
+  }
+  .togglebutton label input[type=checkbox]:checked + .toggle:after {
+    border-color: #000000;
+  }
+  .radio label .check {
+    background-color: rgb(45, 25, 160);
+  }
+  .radio input[type=radio]:checked ~ .check {
+    background-color: rgb(45, 25, 160);
+  }
+  .radio input[type=radio]:checked ~ .circle {
+    border-color: #000000;
+  }
+  .radio label {
+    color: black;
+  }
+  .slider.noUi-connect {
+    background-color: rgb(45, 25, 160);
+  }
+  .slider .noUi-handle {
+    border-color: rgb(45, 25, 160);
+  }
+  .datepicker td.active p,
+.datepicker td.active:hover p {
+  background-color: rgb(45, 25, 160);
+}
+.datepicker td.primary p,
+.datepicker td.primary:hover p {
+  background-color: rgb(45, 25, 160);
+}
+.datepicker span.active, .datepicker span.active:focus, .datepicker span.active:hover, .datepicker span.active:active {
+    background-color: rgb(45, 25, 160);
+  }
