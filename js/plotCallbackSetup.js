@@ -20,46 +20,95 @@ function Compute() {
 
     const bs = new BlackScholes(S, S, r, b, sigma, T, dcc);
 
+    DrawValues(bs);
+}
+
+function DrawValues(model) {
+
     const kMin = Math.max(1e-4, parseFloat($("#min-strike-value").val()));
     const kMax = Math.max(kMin + 1e-4, parseFloat($("#max-strike-value").val()));
     const nStrikes = Math.max(10, parseInt($("#n-strikes-value").val()));
 
     const dK = (kMax - kMin) / (nStrikes - 1);
+
+    var strikes = [];
+    var callPrice = [], putPrice = [];
+    var callDelta = [], putDelta = [];
+    var callGamma = [], putGamma = [];
+    var callVega = [], putVega = [];
+    var callRho = [], putRho = [];
+    var callCarryRho = [], putCarryRho = [];
+    var callTheta = [], putTheta = [];
+    var callCharm = [], putCharm = [];
+    var callTheta2 = [], putTheta2 = [];
+
+    var tmpC = 0.0, tmpP = 0.0;
     for (let i = 0; i < nStrikes; ++i) {
-        bs.K = kMin + i * dK;
-        bs.Price();
-        bs.Delta();
-        bs.Gamma();
-        bs.Vega();
-        bs.Rho();
-        bs.CarryRho();
-        bs.Theta();
-        bs.Charm();
-        bs.Theta2();
+        strikes.push(kMin + i * dK);
+        model.K = strikes[strikes.length - 1];
+
+        [tmpC, tmpP] = model.Price();
+        callPrice.push(tmpC), putPrice.push(tmpP);
+
+        [tmpC, tmpP] = model.Delta();
+        callDelta.push(tmpC), putDelta.push(tmpP);
+
+        [tmpC, tmpP] = model.Gamma();
+        callGamma.push(tmpC), putGamma.push(tmpP);
+
+        [tmpC, tmpP] = model.Vega();
+        callVega.push(tmpC), putVega.push(tmpP);
+
+        [tmpC, tmpP] = model.Rho();
+        callRho.push(tmpC), putRho.push(tmpP);
+
+        [tmpC, tmpP] = model.CarryRho();
+        callCarryRho.push(tmpC), putCarryRho.push(tmpP);
+
+        [tmpC, tmpP] = model.Theta();
+        callTheta.push(tmpC), putTheta.push(tmpP);
+
+        [tmpC, tmpP] = model.Charm();
+        callCharm.push(tmpC), putCharm.push(tmpP);
+
+        [tmpC, tmpP] = model.Theta2();
+        callTheta2.push(tmpC), putTheta2.push(tmpP);
     }
+
+    Plot(strikes, callPrice, putPrice, "Price", "price-chart");
+    Plot(strikes, callDelta, putDelta, "Delta", "delta-chart");
+    Plot(strikes, callGamma, putGamma, "Gamma", "gamma-chart");
+    Plot(strikes, callVega, putVega, "Vega", "vega-chart");
+    Plot(strikes, callRho, putRho, "Rho", "rho-chart");
+    Plot(strikes, callCarryRho, putCarryRho, "Carry Rho", "carry-rho-chart");
+    Plot(strikes, callTheta, putTheta, "Theta", "theta-chart");
+    Plot(strikes, callCharm, putCharm, "Charm", "charm-chart");
+    Plot(strikes, callTheta2, putTheta2, "Theta2", "theta2-chart");
 }
 
-function SetValues(model) {
-    SetValue(function () { return model.Price(); }, "price");
-    SetValue(function () { return model.Delta(); }, "delta");
-    SetValue(function () { return model.Gamma(); }, "gamma");
-    SetValue(function () { return model.Vega(); }, "vega");
-    SetValue(function () { return model.Rho(); }, "rho");
-    SetValue(function () { return model.CarryRho(); }, "carry-rho");
-    SetValue(function () { return model.Theta(); }, "theta");
-    SetValue(function () { return model.Charm(); }, "charm");
-    SetValue(function () { return model.Theta2(); }, "theta2");
-}
+function Plot(strikes, callData, putData, analytic, id) {
 
-function SetValue(delegate, analytic) {
-    const [call, put] = delegate();
-    SetOutput(call, "call", analytic);
-    SetOutput(put, "put", analytic);
-}
+    Chart.helpers.each(Chart.instances, function(instance){
+        if(instance.chart.canvas.id !== id)
+            return;
+        instance.chart.config.data.labels = strikes;
+        instance.chart.config.data.datasets = [
+            {
+                fill: false,
+                label: "Call " + analytic,
+                data: callData,
+                borderColor: "blue",
+            },
+            {
+                fill: false,
+                label: "Put " + analytic,
+                data: putData,
+                borderColor: "red"
+            },
+        ];
 
-function SetOutput(analytic, callPut, output) {
-    const modelOutput = $("#" + callPut + "-" + output);
-    modelOutput.val(analytic.toPrecision(8));
+        instance.update();
+      });
 }
 
 var callbackSetup = {
