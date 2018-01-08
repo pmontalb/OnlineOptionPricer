@@ -145,8 +145,8 @@
 
 					</div>
 
-					<div class="col-sm-5">
-						<h3>Output</h3>
+					<div class="col-sm-9">
+						<h3>Plots</h3>
 
 						<div>
 							<table class="model-output-wrapper">
@@ -159,6 +159,7 @@
 									<td> 
 										$$P_C = e^{-rT} \left(S e^{bT} \cdot N(d_1) - K \cdot N(d_2)\right)$$ 
 										$$P_P = e^{-rT} \left(K \cdot N(-d_2) - S e^{bT} \cdot N(-d_1)\right)$$ 
+										<canvas class="model-output-wrapper" id="price-chart" width="400" height="400"></canvas>
 									</td>
 								</tr>
 
@@ -166,7 +167,8 @@
 									<td> Delta </td>
 									<td> 
 										$$\Delta_C = e^{(b - r)T} \cdot N(d_1)$$ 
-										$$\Delta_P = e^{(b - r)T} \cdot N(-d_1)$$ 
+										$$\Delta_P = e^{(b - r)T} \cdot N(-d_1)$$
+										<canvas class="model-output-wrapper" id="delta-chart" width="400" height="400"></canvas> 
 									</td>
 								</tr>
 
@@ -174,6 +176,7 @@
 									<td> Gamma </td>
 									<td> 
 										$$\Gamma_C = \Gamma_P = {e^{(b - r)T} \over S\sigma\sqrt{T} } \cdot P(d_1)$$ 
+										<canvas class="model-output-wrapper" id="gamma-chart" width="400" height="400"></canvas>
 									</td>
 								</tr>
 
@@ -181,6 +184,7 @@
 									<td> Vega </td>
 									<td> 
 										$$V_C = V_P = e^{(b - r)T} S\sqrt{T} \cdot P(d_1)$$ 
+										<canvas class="model-output-wrapper" id="vega-chart" width="400" height="400"></canvas>
 									</td>
 								</tr>
 
@@ -189,6 +193,7 @@
 									<td> 
 										$$\rho_{C, P} = {\partial P_{C, P}\over \partial r} + {\partial P_{C, P}\over \partial b}$$
 										$$ {\partial P_{C, P}\over \partial r} = -T \cdot P_{C, P} $$ 
+										<canvas class="model-output-wrapper" id="rho-chart" width="400" height="400"></canvas>
 									</td>
 								</tr>
 
@@ -197,30 +202,37 @@
 									<td> 
 										$$\rho^C_{C, P} = {\partial P_{C, P}\over \partial b}$$
 										$$ {\partial P_{C, P}\over \partial b} = S\cdot T \cdot \Delta_{C, P} $$ 
+										<canvas class="model-output-wrapper" id="carry-rho-chart" width="400" height="400"></canvas>
+									</td>
+								</tr>
+
+								<tr>
+									<td> Theta </td>
+									<td> 
+										$$\theta^C_{C, P} = {\partial P_{C, P}\over \partial t}$$
+										<canvas class="model-output-wrapper" id="theta-chart" width="400" height="400"></canvas>
+									</td>
+								</tr>
+
+								<tr>
+									<td> Charm </td>
+									<td> 
+										$$c_{C, P} = {\partial^2 P_{C, P}\over \partial t\partial S}$$
+										<canvas class="model-output-wrapper" id="charm-chart" width="400" height="400"></canvas>
+									</td>
+								</tr>
+
+								<tr>
+									<td> Theta 2 </td>
+									<td> 
+										$$\theta^2_{C, P} = {\partial^2 P_{C, P}\over \partial t^2}$$
+										<canvas class="model-output-wrapper" id="theta2-chart" width="400" height="400"></canvas>
 									</td>
 								</tr>
 
 							</table>
 						</div>
 					</div>
-
-					<div class="col-sm-4">
-						<h3>Plots</h3>
-
-						<div>
-							<canvas class="model-output-wrapper" id="price-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="delta-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="gamma-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="vega-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="rho-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="carry-rho-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="theta-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="charm-chart" width="400" height="400"></canvas>
-							<canvas class="model-output-wrapper" id="theta2-chart" width="400" height="400"></canvas>
-						</div>
-						
-					</div>
-
 				</div>
 			</div>
 		</div>
