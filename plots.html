@@ -68,7 +68,7 @@
 		<div class="main main-raised">
 			<div class="section section-basic">
 				<div class="container">
-					<div class="col-sm-3">
+					<div class="col-sm-3 follow-scroll">
 						<h3>Input</h3>
 
 						<p></p>
@@ -285,6 +285,24 @@
 
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
+
+			const element = $('.follow-scroll'), originalY = element.offset().top;
+		
+			// Space between element and top of screen (when scrolling)
+			const topMargin = 35;
+			
+			// Should probably be set in CSS; but here just for emphasis
+			element.css('position', 'relative');
+			
+			$(window).on('scroll', function(event) {
+				const scrollTop = $(window).scrollTop();
+				
+				element.stop(false, false).animate({
+					top: scrollTop < originalY
+							? 0
+							: scrollTop - originalY + topMargin
+				}, 100);
+			});
 
 		});
 	</script>
