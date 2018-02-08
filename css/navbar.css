@@ -37,3 +37,31 @@
   .nav-tabs {
     background: rgb(45, 25, 160);
   }
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.menu-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #303030;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.menu-dropdown-content a {
+    text-align: left;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown a:hover {background-color: #ddd}

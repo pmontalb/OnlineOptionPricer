@@ -3,13 +3,13 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-/* .index-page .wrapper>.header {
+.index-page .wrapper>.header {
   height: 50vh;
 }
 
 .index-page .brand {
   margin-top: 20vh;
-} */
+}
 
 .index-page .header-filter:after {
   background: rgba(45, 25, 160, 0.64);
@@ -110,8 +110,8 @@ th, tr, td {
 }
 
 table.fixed {
-  table-layout: fixed;
-  width: 30em;
+  width: 100%;
+  position: relative;
 }
 
 table.fixed td {
@@ -130,4 +130,9 @@ table.fixed td:nth-of-type(3) {
 
 output {
   display: inline!important;
+}
+
+canvas{
+  width: 100%;
+  height: auto;
 }
