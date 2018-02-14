@@ -14,7 +14,7 @@
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
 
 	<!-- CSS Files -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -38,8 +38,8 @@
 				<div id="dropdown" class="menu-dropdown-content">
 					<a href="index.html"> Calculations </a>
 					<a href="plots.html"> Plots and Formulae </a>
-					<a href="https://github.com/pmontalb" target="_blank" class="btn btn-white btn-simple btn-just-icon"> <i class="fa fa-github"></i></a>
-					<a href="https://www.linkedin.com/in/francesco-paolo-montalbano" target="_blank" class="btn btn-white btn-simple btn-just-icon"> <i class="fa fa-linkedin"></i></a>
+					<a href="https://github.com/pmontalb"> Github</a>
+					<a href="https://www.linkedin.com/in/francesco-paolo-montalbano"> LinkedIn </a>
 				</div>
 			</div>
 
@@ -68,15 +68,15 @@
 			</div>
 		</div>
 
-		<div class="main main-raised">
+		<div class="main">
 			<div class="section section-basic">
 				<div class="container">
-					<div class="col-sm-4">
+					<div class="col-sm-4" style="min-width: 275px;">
 						<h3>Input</h3>
 
 						<div class="model-input-wrapper">
 							Spot Price:
-							<input id="slider-spot-value" class="model-input-number" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-spot-value" class="model-input-number small" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-spot" class="slider"></div>
 						</div>
 
@@ -84,7 +84,7 @@
 
 						<div class="model-input-wrapper">
 							Strike Price:
-							<input id="slider-strike-value" class="model-input-number" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-strike-value" class="model-input-number small" type="text" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-strike" class="slider"></div>
 						</div>
 
@@ -92,7 +92,7 @@
 
 						<div class="model-input-wrapper">
 							<span rel="tooltip" title="Risk-free discounting rate"> Risk-Free Interest Rate (%):</span>
-							<input id="slider-interest-rate-value" class="model-input-number" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-interest-rate-value" class="model-input-number small" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-interest-rate" class="slider"></div>
 						</div>
 
@@ -100,7 +100,7 @@
 
 						<div class="model-input-wrapper">
 							<span rel="tooltip" title="Cost of carrying the option's underlying. If there's no borrow rate, use the same value as the risk-free interest rate"> Carry Rate (%):</span>
-							<input id="slider-carry-rate-value" class="model-input-number" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-carry-rate-value" class="model-input-number small" type="text" value="-0.01" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-carry-rate" class="slider"></div>
 						</div>
 
@@ -108,7 +108,7 @@
 
 						<div class="model-input-wrapper">
 							Volatility (%):
-							<input id="slider-volatility-value" class="model-input-number" type="text" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-volatility-value" class="model-input-number small" type="text" value="30" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-volatility" class="slider"></div>
 						</div>
 
@@ -116,7 +116,7 @@
 
 						<div class="model-input-wrapper">
 							Days To Expiry:
-							<input id="slider-expiry-value" class="model-input-number" type="text" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+							<input id="slider-expiry-value" class="model-input-number small" type="text" value="365" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 							<div id="slider-expiry" class="slider"></div>
 							<div class="radio">
 								<label>
