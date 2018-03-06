@@ -1,3 +1,5 @@
+"use strict"
+
 const ALLOWED_DAY_COUNTING_CONVENTION = [365, 252];
 
 class PricingModel {

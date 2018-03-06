@@ -1,3 +1,5 @@
+"use strict"
+
 const oneOverSqrt2PI = 1.0 / Math.sqrt(2.0 * Math.PI);
 
 function std_cdf(x) 
